@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Cards</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-color: #f9f9f9; */
+        }
+
+       
+        .search-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 50px;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    position: relative;
+}
+
+input[type="text"] {
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 300px;
+}
+
+input[type="text"]:focus {
+    border-color: #6ab4f5;
+    box-shadow: 0 0 8px rgba(106, 180, 245, 0.6);
+}
+
+button {
+    background-color: #6ab4f5;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-left: -50px;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4e99d1;
+}
+
+/* Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button:focus {
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+    animation: pulse 1s infinite;
+}
+
+        input[type="text"], select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-left: 10px;
+            width: 30%;
+            font-size: 14px;
+        }
+
+        select {
+            width: 30%;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: calc(33.33% - 20px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px 8px 0 0;
+            object-fit: cover;
+            max-height: 200px;
+        }
+
+        .card-content {
+            padding: 15px;
+            flex-grow: 1;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .price {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .heart {
+            font-size: 18px;
+            color: #e74c3c;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .cards-container {
+                flex-direction: column;
+            }
+
+            .card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search...">
+            <select id="category">
+                <option value="all">All</option>
+                <option value="marketing">Marketing</option>
+                <option value="websites">Websites</option>
+                <option value="applications">Applications</option>
+                <option value="microsoft">Microsoft</option>
+            </select>
+        </div>
+        <br>
+        <div id="cards-container" class="cards-container">
+            <!-- Marketing Cards -->
+            <div class="card marketing">
+                <img src="https://via.placeholder.com/800x400.png" alt="Marketing Image">
+                <div class="card-content">
+                    <h3>Marketing Card 1</h3>
+                    <p>This is a description of Marketing Card 1.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">$10</span>
+                    <span class="heart">❤️</span>
+                </div>
+            </div>
+            <div class="card marketing">
+                <img src="https://via.placeholder.com/800x400.png" alt="Marketing Image">
+                <div class="card-content">
+                    <h3>Marketing Card 2</h3>
+                    <p>This is a description of Marketing Card 2.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">$15</span>
+                    <span class="heart">❤️</span>
+                </div>
+            </div>
+            <div class="card marketing">
+                <img src="https://via.placeholder.com/800x400.png" alt="Marketing Image">
+                <div class="card-content">
+                    <h3>Marketing Card 3</h3>
+                    <p>This is a description of Marketing Card 3.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">$20</span>
+                    <span class="heart">❤️</span>
+                </div>
+            </div>
+
+            <!-- Websites Cards -->
+            <div class="card websites">
+                <img src="https://via.placeholder.com/800x400.png" alt="Website Image">
+                <div class="card-content">
+                    <h3>Website Card 1</h3>
+                    <p>This is a description of Website Card 1.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">$12</span>
+                    <span class="heart">❤️</span>
+                </div>
+            </div>
+            <div class="card websites">
+                <img src="https://via.placeholder.com/800x400.png" alt="Website Image">
+                <div class="card-content">
+                    <h3>Website Card 2</h3>
+                    <p>This is a description of Website Card 2.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">$18</span>
+                    <span class="heart">❤️</span>
+                </div>
+            </div>
+            <div class="card websites">
+                <img src="https://via.placeholder.com/800x400.png" alt="Website Image">
+                <div class="card-content">
+                    <h3>Website Card 3</h3>
+                    <p>This is a description of Website Card 3.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">$25</span>
+                    <span class="heart">❤️</span>
+                </div>
+            </div>
+
+            <!-- Applications Cards -->
+            <div class="card applications">
+                <img src="https://via.placeholder.com/800x400.png" alt="Application Image">
+                <div class="card-content">
+                    <h3>Application Card 1</h3>
+                    <p>This is a description of Application Card 1.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">$8</span>
+                    <span class="heart">❤️</span>
+                </div>
+            </div>
+            <div class="card applications">
+                <img src="https://via.placeholder.com/800x400.png" alt="Application Image">
+                <div class="card-content">
+                    <h3>Application Card 2</h3>
+                    <p>This is a description of Application Card 2.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">$14</span>
+                    <span class="heart">❤️</span>
+                </div>
+            </div>
+            <div class="card applications">
+                <img src="https://via.placeholder.com/800x400.png" alt="Application Image">
+                <div class="card-content">
+                    <h3>Application Card 3</h3>
+                    <p>This is a description of Application Card 3.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">$22</span>
+                    <span class="heart">❤️</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
